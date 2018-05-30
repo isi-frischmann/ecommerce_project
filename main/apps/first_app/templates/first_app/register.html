@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="{% static 'first_app/register.css' %}" />
+</head>
+<body>
+        <div class="container" id="wrap">
+                <div class="row">
+                  <div class="col-md-6 col-md-offset-3">
+                        <form action = '/registerprocess' method = 'post' accept-charset="utf-8" class="form" role="form">
+                            {% csrf_token %} 
+                            
+                            {% if messages %} 
+                            {% for message in messages %}
+                            <ul>
+                                <li>{{message}}</li>
+                            </ul>
+                            {% endfor %} 
+                            {% endif %}
+
+                     <legend>Sign Up</legend>
+                        
+                              <div class="row">
+                                  <div class="col-xs-6 col-md-6">
+                                      <input type="text" name="first_name" value="" class="form-control input-lg" placeholder="First Name"  />                        </div>
+                                  <div class="col-xs-6 col-md-6">
+                                      <input type="text" name="last_name" value="" class="form-control input-lg" placeholder="Last Name"  />                        </div>
+                              </div>
+                              <input type="text" name="email" value="" class="form-control input-lg" placeholder="Your Email"  />
+                              <input type="password" name="password" value="" class="form-control input-lg" placeholder="Password"  /><input type="password" name="confirm_password" value="" class="form-control input-lg" placeholder="Confirm Password"  />                                   <div class="row">
+                                 
+                              <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">
+                                  Register </button>
+                      </form>          
+                    </div>
+          </div>            
+          </div>
+          </div>
+</body>
+</html>
+
